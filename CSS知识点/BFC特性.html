@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            width: 300px;
+            height: 300px;
+        }
+
+        .block {
+            width: 50px;
+            height: 50px;
+            background-color: steelblue;
+            float: right;
+        }
+
+        .fold {
+            width: 300px;
+            height: 300px;
+            border: 1px solid blue;
+            margin-bottom: 20px;
+        }
+
+        .fold .box p {
+            height: 100px;
+            width: 50px;
+            border: 1px solid red;
+            margin: 25px auto;
+        }
+
+        .clearFloat {
+            border: 2px solid black;
+        }
+
+        .clearFloat .float {
+            width: 100px;
+            height: 200px;
+            background-color: thistle;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="block"></div>
+        我不听我不听我不听我不听我不听我不听我不听我不听我不听我不听我不听我不听
+    </div>
+    <!-- BFC 内边距折叠 -->
+    <div class="fold">
+        <div class="box">
+            <p></p>
+        </div>
+        <div class="box">
+            <p></p>
+        </div>
+    </div>
+    <!-- 清除浮动 -->
+    <div class="clearFloat">
+        别挡住我
+        <div class="float"></div>
+    </div>
+</body>
+
+</html>
