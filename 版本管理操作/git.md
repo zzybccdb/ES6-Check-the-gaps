@@ -6,7 +6,8 @@
 
 ## 1. git 指令说明
 
-- git mv 移动或为文件重命名, 已经存在的文件会自动 commit
+- git mv <oldfile> <newfile>
+移动或为文件重命名, 已经存在的文件会自动 commit
 ```bash 
 # 实际运行的是这三条指令
 $ mv test.txt mydir/
@@ -33,7 +34,9 @@ $ git add mydir
     - tags/<tag_name>
 
 - git stash 建立一个临时暂存区
-
+    - save <注释内容>
+    - pop 将暂存区移回
+    - branch 在 stash 的基础上, 建立新分支
 
 - git push <远端仓库地址名> <本地分支名> <远端分支名> 
 
