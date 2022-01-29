@@ -32,6 +32,7 @@ $ git add mydir
 - git checkout 
     - \-b 切换 branch
     - tags/<tag_name>
+    - commit hash
 
 - git stash 建立一个临时暂存区
     - save <注释内容>
@@ -112,4 +113,15 @@ git commit -m "fixed untracked files"
 git config --global core.autocrlf [true | input | false]
 ```
 
+- 撤回中途某次添加的 commit
+```bash
+git revert <commit hash>
 
+# 撤销 merge commit 
+git rever -m <撤销合并中的那个分支, 1 || 2> <commit hash>
+
+```
+
+- 将 push 策略修改为 rebase
+
+git config --global --add pull.rebase true
