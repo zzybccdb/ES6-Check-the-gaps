@@ -123,5 +123,22 @@ git rever -m <撤销合并中的那个分支, 1 || 2> <commit hash>
 ```
 
 - 将 push 策略修改为 rebase
-
 git config --global --add pull.rebase true
+
+- 遇到 commit 消失不见的问题
+```bash
+# 使用 relog 先找出那条 commit 的 hash
+# 记录下那条 commit 命令的 hash, 
+# 新建分支, reset 过去
+# 最后合并分支
+
+git reflog
+
+git checkout -b xxxx
+
+git reset --hard hash
+
+git checkout origin 
+
+git merge origin hash
+```
