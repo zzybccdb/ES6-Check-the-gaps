@@ -1,4 +1,4 @@
-# git 相关内容学习
+# git 实践
 
 使用 githug 进行 git 指令操作, 本次指令说明以在 githug 中出现为主
 
@@ -101,7 +101,7 @@ $ git add mydir
 
 ## 2. git 实际问题解决
 
-- 加入缓存区的问题, 想要在通过 gitignore 忽视它的话, 就需要清空缓存区
+- 加入缓存区的文件, 想要在通过 gitignore 忽视它的话, 就需要清空缓存区
 ```bash
 git rm -r --cached .
 git add .
@@ -122,7 +122,7 @@ git rever -m <撤销合并中的那个分支, 1 || 2> <commit hash>
 
 ```
 
-- 将 push 策略修改为 rebase
+- 将 push 策略修改为 
 git config --global --add pull.rebase true
 
 - 遇到 commit 消失不见的问题
@@ -141,4 +141,20 @@ git reset --hard hash
 git checkout origin 
 
 git merge origin hash
+```
+
+- 部分 clone 仓库内容
+```
+
+$ git init <repo>
+$ cd <repo>
+$ git remote add -f origin <url>
+$ git config core.sparseCheckout true
+
+
+$ echo "some/dir/" >> .git/info/sparse-checkout
+$ echo "another/sub/tree" >> .git/info/sparse-checkout
+
+
+$ git pull origin master
 ```
