@@ -158,3 +158,7 @@ $ echo "another/sub/tree" >> .git/info/sparse-checkout
 
 $ git pull origin master
 ```
+
+- git报错would clobber existing tag
+
+这是由于 vsCode 的 git pull 操作导致，没有同步 tag，解决办法，同步一下 tag 即可 git fetch --tags -f
